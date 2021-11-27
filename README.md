@@ -21,6 +21,10 @@ react是一个将数据渲染为HTML视图的开源JavaScript库。
 如：document.querySelector('#app')
 如：document.getElementByTagName('span')
 2. 使用JavaScript直接操作DOM，浏览器会进行大量的重绘重排。
-2. 原生JavaScript没有组件化编码方案，代码复用率低。
+3. 原生JavaScript没有组件化编码方案，代码复用率低。
 ```
+### 3. react的特点
+```
+1. 采用组件化模式、声明式编码，提高开发效率及组件复用率。
 
+```
