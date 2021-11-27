@@ -26,5 +26,7 @@ react是一个将数据渲染为HTML视图的开源JavaScript库。
 ### 3. react的特点
 ```
 1. 采用组件化模式、声明式编码，提高开发效率及组件复用率。
+2. 在React Native中可以使用React语法进行移动端开发。
+3. 使用虚拟DOM+优秀的Diffing算法，尽量减少与真实DOM的交互。
 
 ```
