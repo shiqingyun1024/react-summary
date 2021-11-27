@@ -11,5 +11,14 @@ React是用于构建用户界面的JavaScript库。
 2. 处理数据（过滤、整理格式等）
 3. 操作DOM呈现页面 === react主要做这一步
 
+可以理解为：
+react是一个将数据渲染为HTML视图的开源JavaScript库。
+```
+### 2. 为什么要学？
+```
+1. 原生JavaScript操作DOM繁琐、效率低（DOM-API操作UI）
+如：document.getElementById('app')
+如：document.querySelector('#app')
+如：document.getElementByTagName('span')
 ```
 
