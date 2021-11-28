@@ -40,6 +40,27 @@ react是一个将数据渲染为HTML视图的开源JavaScript库。
 ```
 ## 1.2 react的基本使用
 ### 1.2.1. 效果
+### 1.2.2. 相关js库
+### 1.2.3. 创建虚拟DOM的两种方式
+### 1.2.4. 虚拟DOM与真实DOM
 ```
 ```
+## 1.3 React JSX
+### 1.3.1 效果
+### 1.3.2 JSX
+```
+1）全称：JavaScript XML
+2）react定义的一种类似于XML的js扩展语法：js+XML
+XML早期用于存储和传输数据
+<student>
+   <name>Tom</name>
+   <age>19</age>
+</student>
+后面改为JSON存储了，因为JSON更方便
+"{"name":"Tom","age":19}"
+3）本质是React.createElement(component,props,...children)方法的语法糖
+
+```
+### 1.3.3 渲染虚拟DOM（元素）
+### 1.3.4 JSX练习
 
