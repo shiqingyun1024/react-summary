@@ -19,7 +19,16 @@
 
     <script type="text/babel"> /* 此处一定要写babel,通过babel把jsx转化为js （默认是text/javascript）*/
     // 1、创建虚拟DOM
-    const VDOM = <h1>Hello,React</h1> /* 此处一定不要写引号，因为不是字符串 */
+    const VDOM = (
+      <div>
+        <h1>前端js框架列表</h1>
+        <ul>
+            <li>Angular</li>
+            <li>React</li>
+            <li>Vue</li>
+        </ul>
+      </div>
+      ) /* 此处一定不要写引号，因为不是字符串 */
 
     // 2、渲染虚拟DOM到页面
     ReactDOM.render(VDOM,document.getElementById('test'))
