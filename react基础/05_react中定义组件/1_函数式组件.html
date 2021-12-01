@@ -17,6 +17,12 @@
     <!-- 引入babel，用于将jsx转为js -->
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">
+      // 1.创建函数式组件
+      function demo(){
+          return <h2>我是用函数定义的组件（适用于【简单组件】的定义）</h2>
+      }
+      // 2.渲染组件到页面  
+      ReactDOM.render(demo(),document.getElementById('test'))
     </script>
 </body>
 </html>
