@@ -16,6 +16,10 @@
             this.name = name
             this.age = age
         }
+        // 一般方法
+        speak(){
+            console.log(`我叫${this.name},我年龄是${this.age}`);
+        }
     }
     // 创建一个Person的实例对象
     const p1 = new Person('tom',18)
@@ -23,6 +27,8 @@
 
     console.log(p1);
     console.log(p2);
+    p1.speak()
+    p2.speak()
     </script>
 </body>
 </html>
