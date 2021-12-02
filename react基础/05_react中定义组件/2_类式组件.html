@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>类式组件</title>
 </head>
+
 <body>
     <!-- 准备好一个容器 -->
     <div id="test"></div>
@@ -16,8 +18,16 @@
     <script src="../js/react-dom.development.js"></script>
     <!-- 引入babel，用于将jsx转为js -->
     <script src="../js/babel.min.js"></script>
-    <script src="text/babel">
-
+    <script type="text/babel">
+        // 1. 创建类式组件
+        class MyComponent extends React.Component {
+            render() {
+                return <h2>我是用类定义的组件（适用于【复杂组件】的定义）</h2>
+            }
+        }
+        // 2.渲染组件到页面，组件的使用方式，要写成标签的形式，标签必须闭合。  
+        ReactDOM.render(<MyComponent />, document.getElementById('test'))
     </script>
 </body>
+
 </html>
