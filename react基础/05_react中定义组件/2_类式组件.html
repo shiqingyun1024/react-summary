@@ -22,11 +22,21 @@
         // 1. 创建类式组件
         class MyComponent extends React.Component {
             render() {
+                // render方法放在哪里？--类的原型对象上，供实例使用
                 return <h2>我是用类定义的组件（适用于【复杂组件】的定义）</h2>
             }
         }
         // 2.渲染组件到页面，组件的使用方式，要写成标签的形式，标签必须闭合。  
         ReactDOM.render(<MyComponent />, document.getElementById('test'))
+        /**
+       * 执行了ReactDOM.render(<MyComponent/>....发生了什么？
+       *      1.react解析组件标签，找到了MyComponent组件
+       *      2.发现组件是使用类定义的，随后new出来该类的实例，
+       *       并通过该实例调用到原型上的render方法。
+       *      3.将render返回的虚拟DOM转为真实DOM，随后呈现在页面上。
+       * 
+       * 
+      */
     </script>
 </body>
 
