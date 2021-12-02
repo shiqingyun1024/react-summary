@@ -18,6 +18,8 @@
         }
         // 一般方法
         speak(){
+            // speak方法放在哪里？--类的原型对象上，供实例使用
+            // 通过Person实例调用speak时，speak中的this就是Person实例
             console.log(`我叫${this.name},我年龄是${this.age}`);
         }
     }
@@ -29,6 +31,20 @@
     console.log(p2);
     p1.speak()
     p2.speak()
+
+    // 创建一个Student类，继承于Person类
+    class Student extends Person{
+        constructor(name,age,grade){
+            super(name,age)
+            this.grade = grade
+        }
+         // 重写从父类继承的方法
+         speak(){
+            console.log(`我叫${this.name},我年龄是${this.age},我正在读${this.grade}`);
+        }
+    }
+    const s1 = new Student('小张',15,'高一')
+    console.log(s1);
     </script>
 </body>
 </html>
