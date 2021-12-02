@@ -7,6 +7,22 @@
     <title>1_类的基本知识</title>
 </head>
 <body>
-    
+    <script type="text/javascript">
+    //    创建一个Person类
+    class Person{
+        // 构造器方法
+        constructor(name,age){
+            // 构造器中的this是谁？--类的实例对象
+            this.name = name
+            this.age = age
+        }
+    }
+    // 创建一个Person的实例对象
+    const p1 = new Person('tom',18)
+    const p2 = new Person('jerry',19)
+
+    console.log(p1);
+    console.log(p2);
+    </script>
 </body>
 </html>
