@@ -23,6 +23,7 @@
            super(props)
            // 初始化状态
            this.state = {isHot:true}
+           this.changeWeather = this.changeWeather.bind(this);
         }
         render(){
             // 读取状态
@@ -39,9 +40,6 @@
     // 2.渲染组件到页面
     ReactDOM.render(<Weather/>,document.getElementById('test'))
 
-    function demo(){
-        console.log('标题被点击了');
-    }
     </script>
 </body>
 </html>
