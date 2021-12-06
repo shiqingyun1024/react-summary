@@ -19,19 +19,14 @@
     <script type="text/babel">
     // 1. 创建组件
     class Weather extends React.Component{
-        // 构造器调用几次？--- 1次
-        constructor(props){
-           super(props)
-           this.state = {isHot:true}
-           this.nice = this.changeWeather.bind(this);
-        }
-        // render调用几次？---1+n次 1是初始化的那次 n是状态更新的次数
+        // 初始化状态
+        state = {isHot:true}
         render(){
             const {isHot} = this.state;
             return <h1 onClick={this.nice}>今天天气很{isHot?'炎热':'凉爽'}</h1>
         }
-        // changeWeather调用几次？--- 点几次调用几次
-        changeWeather(){
+        // 自定义方法 --- 要用赋值语句的形式+箭头函数
+        changeWeather=()=>{
             const isHot = this.state.isHot
             this.setState({isHot:!isHot})
         }
