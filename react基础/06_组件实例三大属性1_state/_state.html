@@ -37,8 +37,13 @@
             // 由于changeWeather是作为onClick的回调，所以不是通过实例调用的，是直接调用。
             // 类中的方法默认开启了局部的严格模式，所以changeWeather中的this为undefined
             console.log(this.state.isHot);
-            // 严重注意：状态（state）不可直接更改，要借助一个内置的API去更改
-            this.state.isHot = !this.state.isHot
+            // 严重注意：状态（state）不可直接更改，下面这行就是直接更改，要借助一个内置的API去更改
+            // this.state.isHot = !this.state.isHot // 在react中，这是错误的写法
+
+            // 获取原来的isHot值
+            const isHot = this.state.isHot
+            // 严重注意：状态必须通过setState进行更新
+            this.setState({isHot:!isHot})
         }
     }
     // 2.渲染组件到页面
