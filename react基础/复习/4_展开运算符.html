@@ -22,8 +22,12 @@
         console.log(sum(1,2,3,4));
 
         let person = {name:'tom',age:18}
-        let person2 = person
-        console.log(...person);  // 报错，三点运算符不能展开对象
+        let person2 = {...person} // 新语法，相当于浅拷贝
+        // console.log(...person);  // 报错，三点运算符不能展开对象
+
+        person.name = 'jerry'
+        console.log(person2); // {name:'tom',age:18}
+        console.log(person);  // {name:'jerry',age:18}
     </script>
 </body>
 </html>
