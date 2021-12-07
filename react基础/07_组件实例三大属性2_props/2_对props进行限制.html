@@ -17,6 +17,9 @@
     <script src="../js/react-dom.development.js"></script>
     <!-- 引入babel，用于将jsx转为js -->
     <script src="../js/babel.min.js"></script>
+    <!-- 引入prop-types，用于对组件标签属性进行限制 -->
+    <script src="../js/prop-types.js"></script>
+
     <script type="text/babel">
         // 1、创建组件
         class Person extends React.Component {
@@ -32,8 +35,9 @@
                 )
             }
         }
+        // PropTypes由引入的prop-types.js提供，string表示字符串类型，isRequired表示必传
         Person.propTypes = {
-            name:React.PropTypes.string   // 对name限制为string类型，string要小写
+            name:PropTypes.string.isRequired   // 对name限制为string类型，string要小写
         }
         // 渲染组件到页面
         ReactDOM.render(<Person name="tom" age="18" sex="女"/>,document.getElementById('test1'))
