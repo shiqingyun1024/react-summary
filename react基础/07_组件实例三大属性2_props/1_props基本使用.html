@@ -8,7 +8,8 @@
 </head>
 <body>
     <!-- 准备好一个容器 -->
-    <div id="test"></div>
+    <div id="test1"></div>
+    <div id="test2"></div>
 
     <!-- 引入react核心库 -->
     <script src="../js/react.development.js"></script>
@@ -32,11 +33,11 @@
             }
         }
         // 渲染组件到页面
-        ReactDOM.render(<Person name="tom" age="18" sex="女"/>,document.getElementById('test'))
+        ReactDOM.render(<Person name="tom" age="18" sex="女"/>,document.getElementById('test1'))
 
         // 更简洁的写法
         const p = {name:'老刘',age:18,sex:'女'}
-        ReactDOM.render(<Person {...p}/>,document.getElementById('test'))
+        ReactDOM.render(<Person {...p}/>,document.getElementById('test2'))
 
     </script>
 </body>
