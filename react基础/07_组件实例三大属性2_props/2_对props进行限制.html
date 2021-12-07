@@ -37,7 +37,12 @@
         }
         // PropTypes由引入的prop-types.js提供，string表示字符串类型，isRequired表示必传
         Person.propTypes = {
-            name:PropTypes.string.isRequired   // 对name限制为string类型，string要小写
+            name:PropTypes.string.isRequired,   // 对name限制为string类型，string要小写
+            sex:PropTypes.string
+        }
+        // 设置默认值
+        Person.defaultProps = {
+            sex:'男'    // 默认值是’男‘
         }
         // 渲染组件到页面
         ReactDOM.render(<Person name="tom" age="18" sex="女"/>,document.getElementById('test1'))
