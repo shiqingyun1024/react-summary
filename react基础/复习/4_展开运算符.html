@@ -21,6 +21,7 @@
         }
         console.log(sum(1,2,3,4));
 
+        // 构造字面量对象时使用展开语法
         let person = {name:'tom',age:18}
         let person2 = {...person} // 新语法，相当于浅拷贝
         // console.log(...person);  // 报错，三点运算符不能展开对象
@@ -28,6 +29,10 @@
         person.name = 'jerry'
         console.log(person2); // {name:'tom',age:18}
         console.log(person);  // {name:'jerry',age:18}
+
+        // 合并
+        let person3 = {...person,name:'jack',address:'地球'}
+        console.log(person3); // {name:'jack',age:18,address:'地球'}
     </script>
 </body>
 </html>
