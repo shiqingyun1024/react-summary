@@ -45,7 +45,8 @@
         }
         // 指定默认标签属性值
         Person.defaultProps = {
-            sex:'男'    // 默认值是’男‘
+            sex:'男',    // sex默认值是’男‘
+            age:18  // age默认值是18
         }
         // 渲染组件到页面
         ReactDOM.render(<Person name="tom" age="18" sex="女"/>,document.getElementById('test1'))
