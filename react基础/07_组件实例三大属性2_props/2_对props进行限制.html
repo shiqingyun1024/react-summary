@@ -36,16 +36,19 @@
             }
         }
         // PropTypes由引入的prop-types.js提供，string表示字符串类型，isRequired表示必传
+        // 对标签属性进行类型、必要性的限制
         Person.propTypes = {
             name:PropTypes.string.isRequired,   // 对name限制为string类型，string要小写
-            sex:PropTypes.string
+            sex:PropTypes.string,
+            age:PropTypes.number
         }
-        // 设置默认值
+        // 指定默认标签属性值
         Person.defaultProps = {
             sex:'男'    // 默认值是’男‘
         }
         // 渲染组件到页面
         ReactDOM.render(<Person name="tom" age="18" sex="女"/>,document.getElementById('test1'))
+        ReactDOM.render(<Person name="tom" age={18} sex="女"/>,document.getElementById('test2'))
 
         // 更简洁的写法
         const p = {name:'老刘',age:18,sex:'女'}
