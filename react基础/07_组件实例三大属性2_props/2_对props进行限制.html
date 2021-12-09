@@ -25,6 +25,11 @@
     <script type="text/babel">
         // 1、创建组件
         class Person extends React.Component {
+            constructor(props){
+                // 构造器是否接受props,是否传递给super，取决于：是否希望在构造器中通过this访问props
+                super(props)
+                console.log('constructor',this.props);
+            }
             // PropTypes由引入的prop-types.js提供，string表示字符串类型，isRequired表示必传
             // 对标签属性进行类型、必要性的限制
             static propTypes = {
