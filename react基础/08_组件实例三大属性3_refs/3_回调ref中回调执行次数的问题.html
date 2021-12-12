@@ -34,10 +34,11 @@
             render() {
                 const {isHot} = this.state;
                 // ref={(c)=>{this.input1 = c;console.log('@',c)}} 属于内联函数
+                // jsx里面的注释  用{/* */}表示
                 return (
                     <div>
                         <div>今天天气很{isHot?'炎热':'凉爽'}</div>
-                        <input type="text" ref={(c)=>{this.input1 = c;console.log('@',c)}} />&nbsp;<br/>
+                        {/*<input type="text" ref={(c)=>{this.input1 = c;console.log('@',c)}} />&nbsp;<br/>*/}
                         <button onClick={this.showData}>点我提示输入的数据</button>&nbsp;
                         <button onClick={this.changeWeather}>切换天气</button>&nbsp;
                     </div>
