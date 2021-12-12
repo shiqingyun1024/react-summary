@@ -26,6 +26,7 @@
              * 就是说只存储一个ref标识的元素
              * */ 
             myRef = React.createRef()
+            myRef2 = React.createRef()
             // 展示左侧输入框的数据
             showData = () => {
                 alert(this.myRef.current.value);
@@ -33,8 +34,7 @@
 
             // 展示右侧输入框的数据
             showData2 = () => {
-                const {input2} = this
-                alert(input2.value)
+                alert(this.myRef2.current.value);
             }
             // <input ref="input2" onBlur={this.showData2} type="text" placeholder="失去焦点提示数据" />
             // {(currentNode) => { this.input1 = currentNode }} 可以简写成 {c => this.input1 = c }
@@ -44,7 +44,7 @@
                         {/*<input ref={(currentNode) => { this.input1 = currentNode }} type="text" placeholder="点击按钮提示数据" />&nbsp;*/}
                         <input ref={this.myRef} type="text" placeholder="点击按钮提示数据" />&nbsp;
                         <button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
-                        <input ref={c => this.input2 = c} onBlur={this.showData2} type="text" placeholder="失去焦点提示数据" />
+                        <input ref={this.myRef2} onBlur={this.showData2} type="text" placeholder="失去焦点提示数据" />
                     </div>
                 )
             }
