@@ -29,10 +29,11 @@
             }
             changeWeather = ()=>{
                 const {isHot} = this.state;
-                setState({isHot:!isHot})
+                this.setState({isHot:!isHot})
             }
             render() {
                 const {isHot} = this.state;
+                // ref={(c)=>{this.input1 = c;console.log('@',c)}} 属于内联函数
                 return (
                     <div>
                         <div>今天天气很{isHot?'炎热':'凉爽'}</div>
