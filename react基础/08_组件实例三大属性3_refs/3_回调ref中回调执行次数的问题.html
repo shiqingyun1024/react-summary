@@ -21,14 +21,17 @@
     <script type="text/babel">
         // 创建组件
         class Demo extends React.Component {
+
+            state = {isHot:true}
             showData = ()=>{
                 const {input1} = this;
               alert(input1.value)
             }
             render() {
+                
                 return (
                     <div>
-                        <input type="text" ref={c=>this.input1 = c} />&nbsp;
+                        <input type="text" ref={(c)=>{this.input1 = c;console.log('@',c)}} />&nbsp;
                         <button onClick={this.showData}>点我提示输入的数据</button>&nbsp;
                     </div>
                 )
