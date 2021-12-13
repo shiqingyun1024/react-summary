@@ -19,6 +19,7 @@
     <!-- 引入babel，用于将jsx转为js -->
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">
+        // 非受控组件就是提交的时候才会取输入框中的值（这个时候是没有提前去获悉输入的值的状态的）
         // 创建组件
        class Login extends React.Component{
         handleSubmit = (event)=>{
