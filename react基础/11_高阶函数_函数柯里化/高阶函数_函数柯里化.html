@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数_函数柯里化</title>
+</head>
+
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="test"></div>
+
+    <!-- 引入react核心库 -->
+    <script src="../js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作DOM -->
+    <script src="../js/react-dom.development.js"></script>
+    <!-- 引入babel，用于将jsx转为js -->
+    <script src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        // 受控组件就是把输入框中的数据维护到状态中，用到的时候直接去取值就行。
+        // 创建组件
+        class Login extends React.Component {
+            // 初始化状态
+            state = {
+                username: '', // 用户名
+                password: '' // 密码
+            }
+            saveUsername = (event) => {
+                this.setState({ username: event.target.value })
+            }
+            savePassword = (event) => {
+                this.setState({ password: event.target.value })
+            }
+            handleSubmit = (event) => {
+                // event.preventDefault();
+                const {username,password} = this.state;
+                alert(`提交的用户名是：${username},提交的密码是：${password}`)
+            }
+            render() {
+                return (
+                    <form action="http://www.atguigu.com" onSubmit={this.handleSubmit}>
+                        用户名：<input type="text" onChange={this.saveUsername} name="username" />
+                        密码：<input type="password" onChange={this.savePassword} name="password" />
+                        <button>登录</button>
+                    </form>
+                )
+            }
+        }
+        // 渲染组件
+        ReactDOM.render(<Login />, document.getElementById('test'));
+
+    </script>
+</body>
+
+</html>
