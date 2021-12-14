@@ -26,8 +26,17 @@
          *         常见的高阶函数有：Promise、setTimeout、setIntervail、数组的一些方法如map，some，filter，every等
          * 
          * 函数柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。
-         * 
-         * */ 
+         * // 函数柯里化的形式
+        function sum2(a){
+            return (b)=>{
+                return (c)=>{
+                    return a+b+c
+                }
+            }
+        }
+        const result2 = sum2(1)(2)(3);
+        console.log(result2);
+         * */
         // 受控组件就是把输入框中的数据维护到状态中，用到的时候直接去取值就行。
         // 创建组件
         class Login extends React.Component {
@@ -44,14 +53,14 @@
             // }
             // 保存表单数据到状态中，使用的是高阶函数，函数柯里化
             saveFormData = (dataType) => {
-                return (event)=>{
+                return (event) => {
                     this.setState({ [dataType]: event.target.value })
                 }
             }
             // 表单提交的回调
             handleSubmit = (event) => {
                 event.preventDefault(); // 阻止表单提交
-                const {username,password} = this.state;
+                const { username, password } = this.state;
                 alert(`提交的用户名是：${username},提交的密码是：${password}`)
             }
             render() {
