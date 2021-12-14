@@ -36,26 +36,29 @@
                 username: '', // 用户名
                 password: '' // 密码
             }
-            saveUsername = (event) => {
-                this.setState({ username: event.target.value })
-            }
-            savePassword = (event) => {
-                this.setState({ password: event.target.value })
-            }
+            // saveUsername = (event) => {
+            //     this.setState({ username: event.target.value })
+            // }
+            // savePassword = (event) => {
+            //     this.setState({ password: event.target.value })
+            // }
+            // 保存表单数据到状态中，使用的是高阶函数，函数柯里化
             saveFormData = (dataType) => {
-
-                this.setState({ password: event.target.value })
+                return (event)=>{
+                    this.setState({ [dataType]: event.target.value })
+                }
             }
+            // 表单提交的回调
             handleSubmit = (event) => {
-                // event.preventDefault();
+                event.preventDefault(); // 阻止表单提交
                 const {username,password} = this.state;
                 alert(`提交的用户名是：${username},提交的密码是：${password}`)
             }
             render() {
                 return (
                     <form action="http://www.atguigu.com" onSubmit={this.handleSubmit}>
-                        用户名：<input type="text" onChange={this.saveUsername} name="username" />
-                        密码：<input type="password" onChange={this.savePassword} name="password" />
+                        用户名：<input type="text" onChange={this.saveFormData('username')} name="username" />
+                        密码：<input type="password" onChange={this.saveFormData('password')} name="password" />
                         <button>登录</button>
                     </form>
                 )
