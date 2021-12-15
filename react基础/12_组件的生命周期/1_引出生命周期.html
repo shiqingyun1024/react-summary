@@ -21,11 +21,14 @@
     <script type="text/babel">
         // 创建组件
         class Life extends React.Component{
+            death = ()=>{
+                
+            }
             render(){
                 return(
                     <div>
                         <h2>React学不会怎么办</h2>
-                        <button>不活了</button>
+                        <button onClick={this.death}>不活了</button>
                     </div>
                 )
             }
