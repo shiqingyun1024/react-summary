@@ -22,7 +22,8 @@
         // 创建组件
         class Life extends React.Component{
             death = ()=>{
-                
+                // 卸载组件
+                ReactDOM.unmountComponentAtNode(document.getElementById('test'))
             }
             render(){
                 return(
