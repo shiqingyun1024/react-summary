@@ -21,6 +21,7 @@
     <script type="text/babel">
         // 创建组件
         class Life extends React.Component{
+            state = {opacity:1}
             death = ()=>{
                 // 卸载组件
                 ReactDOM.unmountComponentAtNode(document.getElementById('test'))
@@ -28,7 +29,7 @@
             render(){
                 return(
                     <div>
-                        <h2>React学不会怎么办</h2>
+                        <h2 style={{}}>React学不会怎么办</h2>
                         <button onClick={this.death}>不活了</button>
                     </div>
                 )
