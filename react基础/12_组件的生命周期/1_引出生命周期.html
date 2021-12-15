@@ -19,7 +19,19 @@
     <!-- 引入babel，用于将jsx转为js -->
     <script src="../js/babel.min.js"></script>
     <script type="text/babel">
-        
+        // 创建组件
+        class Life extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h2>React学不会怎么办</h2>
+                        <button>不活了</button>
+                    </div>
+                )
+            }
+        }
+        // 渲染组件
+        ReactDOM.render(<Life/>,document.getElementById('test'))
     </script>
 </body>
 
