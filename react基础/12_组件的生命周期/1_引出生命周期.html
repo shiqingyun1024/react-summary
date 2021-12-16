@@ -23,13 +23,14 @@
         class Life extends React.Component {
             state = { opacity: 1 }
             death = () => {
+                // clearInterval(this.timer)
                 // 卸载组件
                 ReactDOM.unmountComponentAtNode(document.getElementById('test'))
             }
 
             // 组件挂载页面之后调用
             componentDidMount(){
-                setInterval(() => {
+                this.timer = setInterval(() => {
                     // 获取原状态
                     let { opacity } = this.state
                     // 减小0.1
@@ -38,6 +39,11 @@
                     // 设置新的透明度
                     this.setState({ opacity })
                 }, 200)
+            }
+
+            // 组件将要卸载
+            componentWillUnmount(){
+                clearInterval(this.timer)
             }
             // render调用的时机：初始化渲染、状态更新之后
             render() {
