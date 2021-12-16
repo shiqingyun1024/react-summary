@@ -27,7 +27,8 @@
                 ReactDOM.unmountComponentAtNode(document.getElementById('test'))
             }
 
-            action = () => {
+            // 组件挂载页面之后调用
+            componentDidMount(){
                 setInterval(() => {
                     // 获取原状态
                     let { opacity } = this.state
@@ -38,12 +39,12 @@
                     this.setState({ opacity })
                 }, 200)
             }
+            // render调用的时机：初始化渲染、状态更新之后
             render() {
                 return (
                     <div>
                         <h2 style={{ opacity: this.state.opacity }}>React学不会怎么办</h2>
                         <button onClick={this.death}>不活了</button>
-                        <button onClick={this.action}>开始变化</button>
                     </div>
                 )
             }
