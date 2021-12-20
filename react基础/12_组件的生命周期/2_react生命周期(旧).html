@@ -68,11 +68,25 @@
                 console.log('Count---shouldComponentUpdate');
                 return true
             }
+            // 组件将要更新的钩子
+            componentWillUpdate(){
+                console.log('Count---componentWillUpdate');
+            }
+            // 组件更新完毕的钩子
+            componentDidUpdate(){
+                console.log('Count---componentDidUpdate');
+            }
             // 生命周期钩子的顺序
             // Count---constructor
             // Count---componentWillMount
             // Count---render
             // Count---componentDidMount
+
+            // 组件更新的顺序
+            // Count---shouldComponentUpdate
+            // Count---componentWillUpdate
+            // Count---render
+            // Count---componentDidUpdate
         }
         // 渲染组件
         ReactDOM.render(<Count/>, document.getElementById('test'))
