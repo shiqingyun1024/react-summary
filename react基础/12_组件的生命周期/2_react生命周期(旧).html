@@ -59,9 +59,13 @@
             componentDidMount(){
                 console.log('Count---componentDidMount');
             }
-            // 组件卸载
+            // 组件将要卸载的钩子
             componentWillUnMount(){
                 console.log('Count---componentWillUnMount');
+            }
+            // 组件将要卸载的钩子
+            shouldComponentUpdate(){
+                console.log('Count---shouldComponentUpdate');
             }
             // 生命周期钩子的顺序
             // Count---constructor
