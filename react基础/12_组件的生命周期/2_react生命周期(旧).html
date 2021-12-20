@@ -63,9 +63,10 @@
             componentWillUnMount(){
                 console.log('Count---componentWillUnMount');
             }
-            // 组件将要卸载的钩子
+            // 控制组件更新的“阀门”  如果不写，默认返回true，为true才能继续往下走，为false就不会继续。
             shouldComponentUpdate(){
                 console.log('Count---shouldComponentUpdate');
+                return true
             }
             // 生命周期钩子的顺序
             // Count---constructor
