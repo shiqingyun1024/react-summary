@@ -21,43 +21,28 @@
     <script type="text/babel">
         // 生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 周期钩子函数
         // 创建组件
-        class Life extends React.Component {
-            state = { opacity: 1 }
-            death = () => {
-                // clearInterval(this.timer)
-                // 卸载组件
-                ReactDOM.unmountComponentAtNode(document.getElementById('test'))
-            }
-
-            // 组件挂载页面之后调用
-            componentDidMount(){
-                this.timer = setInterval(() => {
-                    // 获取原状态
-                    let { opacity } = this.state
-                    // 减小0.1
-                    opacity -= 0.1;
-                    if (opacity <= 0) opacity = 1
-                    // 设置新的透明度
-                    this.setState({ opacity })
-                }, 200)
-            }
-
-            // 组件将要卸载
-            componentWillUnmount(){
-                clearInterval(this.timer)
+        class Count extends React.Component {
+            // 初始化状态
+            state = {count:0}
+            // 加1
+            add = ()=>{
+                // 获取原状态
+                const {count} = this.state
+                // 更新状态
+                this.setState({count:count+1})
             }
             // render调用的时机：初始化渲染、状态更新之后
             render() {
                 return (
                     <div>
-                        <h2 style={{ opacity: this.state.opacity }}>React学不会怎么办</h2>
-                        <button onClick={this.death}>不活了</button>
+                        <h2>当前求和为{this.state.count}</h2>
+                        <button onClick={this.add}>点我+1</button>
                     </div>
                 )
             }
         }
         // 渲染组件
-        ReactDOM.render(<Life />, document.getElementById('test'))
+        ReactDOM.render(<Count/>, document.getElementById('test'))
     </script>
 </body>
 
